@@ -1,0 +1,22 @@
+/* element = langsung tulis nama tag nya  */
+/* class = tulis depannya titik / dot */
+/* id = tulis depannya # / pagar */
+
+/* multiple selector bisa pakai koma */
+/* nested / style bersarang bisa pakai spasi */
+h1 {
+    color: red;
+    margin-top: 50px;
+}
+
+.konten {
+    font-size: 20px;
+    background-color: blue;
+}
+
+#about {
+    color: blue;
+}
+
+/* kiri = property / key */
+/* kanan = value */
