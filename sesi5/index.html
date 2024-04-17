@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <div id="hitung">satu dua tiga</div>  -->
+
+   <div>Kalkulator Sederhana</div>
+
+   <div>Angka ke 1 = <input type="text" id="angka1" value="7"></div>
+   <div>Angka ke 2 = <input type="text" id="angka2" value="3"></div>
+   <!-- <div><button>TAMBAH</button></div> -->
+   <div id="hasil">asfdsa<div>
+
+    <p>new paragraf</p>
+</body>
+</html>
+<script src="./index.js"></script>
+
+<script>
+    // document.getElementById("hitung").innerText = "empat lima enam";
+    const angka1 = document.getElementById("angka1").value;
+    const angka2 = document.getElementById("angka2").value;
+
+    console.log(angka1, angka2)
+
+    document.getElementById("hasil").innerText = parseInt(angka1) * parseInt(angka2);
+
+    const p = document.createElement('p');
+    p.innerHTML = "new paragraf"
+
+    const kontainer = document.getElementById("hasil");
+    kontainer.appendChild(p)
+
+</script>
