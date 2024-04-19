@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>Kalkulator Sederhana</div>
+
+   <div>Angka ke 1 = <input type="text" id="angka1"></div>
+   <div>Angka ke 2 = <input type="text" id="angka2"></div>
+   <div><button onclick="tambah()">TAMBAH</button></div>
+   <div><button onclick="tambahBonus(10)">TAMBAH BONUS</button></div>
+   <div id="hasil"><div>
+</body>
+</html>
+
+<script>
+    const angka1 = document.getElementById("angka1");
+    const angka2 = document.getElementById("angka2");
+
+    function tambah() {
+        document.getElementById("hasil").innerText = parseInt(angka1.value) + parseInt(angka2.value);
+    }
+
+    function tambahBonus(bonus) {
+        document.getElementById("hasil").innerText = parseInt(angka1.value) + parseInt(angka2.value) + bonus; 
+    }
+
+    // function microwave(adonan) {
+    //     console.log('adonan 1' + adonan)
+    // }
+
+    // function microwave2(adonan) {
+    //     console.log('adonan 2' + adonan)
+    //     return 'kue hangat'
+    // }
+
+    // const piring = microwave('roti')
+    // const piring2 = microwave2('kue')
+
+    // console.log(piring)
+    // console.log(piring2)
+
+    // function kuadrat(angka) {
+    //     return angka
+    // }
+
+    // console.log(kuadrat(2));
+
+    function tambah(angka1, angka2) {
+        const hasil = angka1 + angka2
+        return hasil
+    }
+
+    const hasil = tambah(1, 2);
+    console.log(hasil)
+
+    // penulisan function ada 2 cara
+
+    function bagi(angka1, angka2) {
+        console.log('melakukan pembagian')
+        const hasil = angka1 / angka2
+        return hasil;
+    }
+
+    const bagi2 = (angka1, angka2) => {
+        return angka1 / angka2
+    };
+
+    const pangkat = angka => angka * angka
+    
+
+    console.log(bagi(10,2))
+    console.log(bagi2(10,2))
+
+
+    const manusia = {
+        nama: 'fani',
+        umur: 25,
+        makan(makanan) {
+            console.log('lagi makan')
+            return makanan
+        }
+    }
+
+    manusia.nama = 'nusendra'
+    const makanApa = manusia.makan('martabak')
+    console.log(makanApa)
+
+</script>
