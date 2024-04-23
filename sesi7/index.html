@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let e = true; // Boolean = bool
+    let f = false; // Boolean = bool
+
+    console.log(5 == 5);
+    console.log("5" == 5);
+    console.log("5" === 5);
+
+    const a = 1;
+    const b = 2;
+    if (a >= b) { // 2 >= 2 benar
+        console.log('salah')
+    } else if (a <= b) { // 1 <= 1 benar
+        console.log('benar 2')
+    } else {
+        console.log('lainnya')
+    }
+
+
+    const angka1 = 10;
+    const angka2 = 15;
+
+    // atau / OR ( || ) jika ada yang benar / salah satunya, maka true
+    // dan / AND (&&) jika semuanya benar, maka true
+
+    if (angka1 === 10 && (angka2 === 15 || angka2 === 50)) {
+        console.log('berhasil')
+    } else {
+        console.log('gagal')
+    }
+    
+    // TERNARY OPERATOR
+
+    if (angka1 === 10) {
+        console.log('ya')
+    } else {
+        console.log('bukan')
+    }
+
+    angka1 === 10 || angka2 === 15 ? console.log('ya') : console.log('bukan');
+
+    // NESTED IF
+    if (angka1 === 15) {
+        if (nama === 'fani') {
+            console.log('aaa')
+        } else {
+            console.log('bbb')
+        }
+    } else {
+        console.log('ccc')
+    }
+
+    // ------- PERULANGAN
+    const students = ["A", "B", "C", "D"];
+
+
+    // cara bodoh
+    // console.log(students[0]);
+    // console.log(students[1]);
+    // console.log(students[2]);
+
+    // cara pintar
+    // students.forEach((item) => {
+    //     console.log(item)
+    // })
+
+    // console.log(students.length)
+
+    for (let i = 0; i < students.length; i++) {
+        console.log(students[i])
+
+        for (let j = 0; j < i; j++) {
+            console.log('sub loop' + j)
+        }
+    }
+
+    console.log("OOOO OOOO OOOO")
+
+    let o = "";
+    for (let i = 0; i < 12; i++) {
+        if (i === 0) {
+            o += "O"
+        } else if (i % 4) {
+            o += "O"
+        } else {
+            o += "O "
+        }
+    }
+
+    console.log(o)
+
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    password : <input type="text" id="password">
+    <button onclick="passwordCheck()">LOGIN</button>
+
+    <br>
+    <br>
+    Masukkan angka : <input type="text" id="angka">
+    <button onclick="cekAngka()">Cek Nilai</button>
+</body>
+</html>
+
+<script>
+    const password = "hacktiv8";
+    const inputPassword = document.getElementById('password')
+    const inputAngka = document.getElementById('angka')
+
+    function passwordCheck() {
+        if (inputPassword.value === password) {
+            alert('berhasil login')
+        } else {
+            alert('gagal login')
+        }
+    }
+
+    function cekAngka() {
+        if (inputAngka.value < 1 || inputAngka.value > 100) {
+            alert('cannot calculate your grade')
+        } else if (inputAngka.value >= 80) {
+            alert('grade A')
+        } else if (inputAngka.value >= 60) {
+            alert('grade B')
+        } else if (inputAngka.value >= 40) {
+            alert('grade C')
+        } else {
+            alert('grade D')
+        }
+    }
+</script>
