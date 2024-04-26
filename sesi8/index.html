@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // const kumpulanAngka = [1, 10, 3, 20, 53, 7];
+    // const kumpulanAngka = ["budi", "candra", "adi", "eli", "satria", "toni"];
+    // console.log(kumpulanAngka)
+
+    // kumpulanAngka.push(4); // menambahkan item di belakang
+    // console.log(kumpulanAngka)
+
+    // kumpulanAngka.pop();
+    // console.log(kumpulanAngka)
+
+    // kumpulanAngka.unshift(100); // menambahkan item ke depan
+    // console.log(kumpulanAngka)
+
+    // kumpulanAngka.sort(function (a, b) {
+    //     return a - b;
+    // })
+
+    // console.log(kumpulanAngka)
+
+    // const pesan = "saya mau beli ikan di pasar";
+    // console.log(pesan.split(" "))
+
+    const hp = ["+628182735321", "081231 1232 321", "6287873 23232 33", "081232123211"]
+
+    let formattedHp = [];
+
+    for (let i = 0; i < hp.length; i++) {
+        let formatted;
+
+        if (hp[i].substring(0, 3) === "+62") {
+            formatted = hp[i].replace("+62", "0")
+        } else if (hp[i].split(" ").length > 1) {
+            formatted = hp[i].split(" ").join("")
+
+            if (formatted.substring(0, 2) === "62") {
+                formatted = formatted.replace("62", "0")
+            }
+        } else {
+            formatted = hp[i]
+        }
+
+        formattedHp.push(formatted)
+    }
+
+    console.log(formattedHp)
+
+    // console.log(hp)
+    // console.log(hp.split(" ").join(""))
+
+
+    // let formattedPhoneNumber = phoneNumber.replace(/\D/g, '');
+
+    let formattedHp2 = [];
+
+    for (let i = 0; i < hp.length; i++) {
+        let formatted = hp[i].replace(/\D/g, '')
+
+        if (formatted.substring(0, 2) === "62") {
+            formatted = formatted.replace("62", "0")
+        }
+
+        formattedHp2.push(formatted)
+    }
+
+    console.log(formattedHp2); // Output: 1234567890
+</script>
