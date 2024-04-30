@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    "use strict"
+
+    const dataMobil = [
+        {
+            nama: 'Jeep',
+            harga: 450000000,
+        },
+        {
+            nama: 'Mini Cooper',
+            harga: 900000000,
+        },
+        {
+            nama: 'Alphard',
+            harga: 1000000000,
+        },
+    ]
+
+    // let arrayBaru = [];
+
+    // for (let i = 0; i < dataMobil.length; i++) {
+    //     arrayBaru.push(dataMobil[i])
+    //     arrayBaru[i]['available'] = true;
+    // }
+
+    // console.log(arrayBaru)
+
+    // ---------- MAP
+    const mobilBaru = dataMobil.map((item,index) => {
+        item['available'] = true;
+
+        item['urutan'] = index;
+     
+        if (item.harga >= 500000000) {
+            item['tipe'] = 'mahal'
+        } else {
+            item['tipe'] = 'murah'
+        }
+
+        return item;
+    });
+
+    console.log(mobilBaru)
+
+
+    // ---------- FILTER
+
+    const filteredCars = dataMobil.filter(item => {
+        return item.harga > 500000000;
+    })
+
+    console.log(filteredCars)
+
+
+    // const pakaian = [
+    //     {
+    //         nama: 'kaos',
+    //         harga: 50000
+    //     },
+    //     {
+    //         nama: 'celana panjang',
+    //         harga: 75000 
+    //     },
+    //     {
+    //         nama: 'Jaket',
+    //         harga: 150000 
+    //     },
+    // ]
+
+    // tambahkan properti baru di array pakaian. Aturannya :
+    // jika harga lebih dari 100.000, dapat potongan 15.000
+
+    // ambil data yang item nya dapat diskon / potongan
+
+    // ------- REDUCE
+
+    const numbers = [1,2,3,4];
+
+    // let totalHarga = 0;
+    // for (let i = 0; i <= numbers.length; i++) {
+    //     totalHarga += i;
+    // }
+
+    const totalHarga = dataMobil.reduce((accumulator, item) => {
+        return accumulator + item.harga
+    }, 0)
+
+    console.log(totalHarga)
+
+
+    // MODULAR FUNCTION / SEPARATION OF CONCERNS
+
+    // async function authentication() {
+    //     getEmail()
+    //     if (user) {
+    //         if (user.password = 'blababal') {
+    //             getUser()
+    //         }
+    //     }
+    //     // proses cek user berdasarkan email
+    //     // proses cek password
+    //     // proses ambil data user kalau sukses login
+        
+    // }
+
+    // function getEmail() {
+    //     const user = await user.getByEmail('aa@aa.com')
+
+    // }
+
+    // function getUser () {
+    //             return user.fetch()
+
+    // }
+</script>
+
