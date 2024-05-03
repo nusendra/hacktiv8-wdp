@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="halo">HALO</div>
+</body>
+</html>
+
+<style>
+    .konten {
+        font-size: 100px;
+        color: red
+    }
+</style>
+
+<script>
+    // 1
+    const fruits = ['apple', 'banana'];
+    fruits.push('cherry')
+    fruits[0] = 'watermellon';
+    console.log(fruits)
+
+    // 2
+    const orang = {
+        nama_depan: 'Nusendra',
+        nama_belakang: 'Hanggarawan',
+        memakai_kacamata: false,
+        darah: {
+            golongan: "O",
+            warna: "red"
+        },
+        hobi: ['memancing', 'menonton'],
+        angka: 20,
+        lulusan: 'hacktiv',
+        barang: ['ip', 'remote', 'layar', 'penghapus'],
+    }
+
+    console.log(orang.darah)
+
+    const rumah = {
+        alamat: 'sidoarjo',
+        pintu: 2
+    }
+
+    console.log(orang.nama_depan + " " + orang.nama_belakang)
+    console.log(`${orang.nama_depan}  ${orang.nama_belakang}`)
+
+    orang.angka = 8
+    orang.memakai_kacamata = true
+    orang.hobi.push('coding')
+    orang.lulusan = 'hacktiv'
+
+    for (let i = 0; i < orang.hobi.length; i++) {
+        console.log(orang.hobi[i])
+    }
+
+    const keys = Object.keys(orang)
+    console.log(keys)
+
+    for (let i = 0; i < keys.length; i++) {
+        console.log(orang[keys[i]])
+    }
+
+    // 3
+    function printDate() {
+        const tanggalSekarang = new Date();
+        console.log(tanggalSekarang)
+    }
+    printDate();
+
+    function cetakTanggal() {
+        return new Date();
+    }
+    const tanggal = cetakTanggal()
+    console.log(tanggal)
+
+    // 4
+    function cekAngka(angka) {
+        if (typeof angka !== "number") {
+            return "invalid"
+        }
+
+        if (angka % 2 === 0) {
+            return "genap";
+        } else {
+            return "ganjil"
+        }
+
+
+        // return angka % 2 === 0 ? "genap" : "ganjil";
+
+
+    }
+
+    const hasil = cekAngka('aaa')
+    const hasil2 = cekAngka(6)
+    const hasil3 = cekAngka(7)
+    console.log(hasil)
+    console.log(hasil2)
+    console.log(hasil3)
+</script>
