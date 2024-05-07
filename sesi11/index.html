@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function reverseString(text) {
+        return text.split("").reverse().join("");
+    }
+
+    console.log(reverseString('Hello world'))
+
+    function isArithmeticProgression(numbers) {
+        const selisihTambah = numbers[1] - numbers[0];
+        const selisihKali = numbers[1] / numbers[0];
+
+        tambahStatus = true;
+        kaliStatus = true;
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (i > 0) {
+                if (numbers[i] - numbers[i - 1] != selisihTambah) {
+                    tambahStatus = false
+                }
+            }
+        }
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (i > 0) {
+                if (numbers[i] / numbers[i - 1] != selisihKali) {
+                    kaliStatus = false;
+                }
+            }
+        }
+
+        if (tambahStatus || kaliStatus) {
+            return true
+
+        }
+        return false
+    }
+
+    console.log(isArithmeticProgression([1,2,3,4,5,6]))
+    console.log(isArithmeticProgression([2,4,6,12]))
+    console.log(isArithmeticProgression([2,4,9,11,13]))
+    console.log(isArithmeticProgression([2,6,18,54]))
+
+    function threeStepsAB(text) {
+        const arr = text.split("")
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == 'a' || arr[i] == 'b') {
+               if (arr[i + 4] == 'a' || arr[i + 4] == 'b') {
+                    return true;
+               } 
+            }
+        }
+
+        return false;
+    }
+
+    console.log('THREE STEPS AB')
+
+    console.log(threeStepsAB('lane borrowed'))
+    console.log(threeStepsAB('i am sick'))
+    console.log(threeStepsAB('you are boring'))
+    console.log(threeStepsAB('barbarian'))
+    console.log(threeStepsAB('bacon and meat'))
+
+    function isPrime(number) {
+        // Check if the number is less than 2
+        if (number < 2) {
+            return false;
+        }
+        console.log(Math.sqrt(number))
+        // Check for divisibility from 2 to the square root of the number
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        // If the number passes all tests, it's prime
+        return true;
+    }
+
+    console.log('is prime')
+    console.log(isPrime(3))
+    console.log(isPrime(7))
+    console.log(isPrime(6))
+    console.log(isPrime(23))
+    console.log(isPrime(33))
+</script>
