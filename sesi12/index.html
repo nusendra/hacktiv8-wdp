@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    const kumpulanAngka = [27, 38, 4, 43, 9, 82 ,10];
+
+    function selectionSort(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            let min = i;
+
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[min])  {
+                    min = j;
+                }
+            }
+
+            if (min != i) {
+                let currentIndex = arr[i];
+                arr[i] = arr[min];
+                arr[min] = currentIndex;
+            }
+
+            console.log(`Proses ke-${i + 1} = ${arr.join(",")}`)
+        }
+
+        return arr;
+    }
+
+    console.log(selectionSort(kumpulanAngka))
+
+    function insertionSort (arr) {
+        for (let i = 1; i < arr.length; i++) {
+            let current = arr[i]
+
+            let j = i - 1;
+
+            for (let k = 0; k < arr.length; k++) {
+                if (arr[j] > current) {
+                    arr[j + 1] = arr[j];
+                    j -= 1;
+                }
+            }
+
+            arr[j + 1] = current;
+        }
+
+        return arr
+
+    }
+
+    console.log(insertionSort(kumpulanAngka))
+
+
+    const angka = [1,2,3,4,5];
+
+    function cariAngka(arr, angkaYangDicari) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == angkaYangDicari) {
+                return arr[i]
+            }
+        }
+
+        return false
+    }
+
+    console.log(cariAngka(angka, 5))
+
+    const pakaiFilter = angka.filter(item => {
+        return item == 3
+    })
+    const pakaiFind = angka.find(item => item == 3)
+
+    console.log('-----')
+    console.log(pakaiFilter)
+    console.log(pakaiFind)
+
+
+    // contoh rekursif
+    function potong() {
+        // proses 1
+        // proses 1
+        // proses 1
+        // proses 1
+        // proses 1
+        // proses 1
+        // proses 1
+        if ("masih belum terpenuhi") {
+            potong();
+        }
+    }
+
+</script>
