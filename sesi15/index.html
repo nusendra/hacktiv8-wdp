@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputCountry"><span><button onclick="getCovidData()">Get Data</button></span>
+    <div>Active Cases : <span id="activeCases"></span></div>
+    <div>Recovered : <span id="recovered"></span></div>
+    <div>New Cases : <span id="newCases"></span></div>
+    <div>Total Cases : <span id="totals"></span></div>
+    <div>Total Deaths : <span id="totalDeaths"></span></div>
+    <div>Total Tests : <span id="totalTests"></span></div>
+</body>
+</html>
+
+<script>
+    const activeCases = document.getElementById("activeCases");
+    const recovered = document.getElementById("recovered");
+    const newCases = document.getElementById("newCases");
+    const totalCases = document.getElementById("totals");
+    const totalDeaths = document.getElementById("totalDeaths");
+    const totalTests = document.getElementById("totalTests");
+    const inputCountry = document.getElementById("inputCountry");
+
+    async function getCovidData() {
+        const url = `https://covid-193.p.rapidapi.com/statistics?country=${inputCountry.value}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'df1cef2d82msh8b49429a8c42ab4p19888bjsnc86a89f28ac5',
+                'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
+            }
+        };
+
+        const response = await fetch(url, options);
+	    const result = await response.text();
+	    console.log(JSON.parse(result));
+
+        const data = JSON.parse(result);
+        activeCases.innerText = data.response[0].cases.active;
+        recovered.innerText = data.response[0].cases.recovered;
+        newCases.innerText = data.response[0].cases.new;
+        totalCases.innerText = data.response[0].cases.total;
+        totalDeaths.innerText = data.response[0].deaths.total;
+        totalTests.innerText = data.response[0].tests.total;
+    }
+</script>
