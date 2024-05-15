@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    //  SYNCHRONOUSE / SYNC
+    //  ASYNCRHONOUS / ASYNC
+
+    // SYNC
+    // const a = 2;
+    // const b = 3;
+    // console.log(a+b);
+
+
+    // ASYNC
+
+//    data produk - 3s
+//    data keranjang - 2s
+//    data kategori - 1s
+//    data produk yang didiskon - 4s
+
+// 10s - SYNC
+// 4s - ASYNC
+
+function hitung(x,y, operator) {
+    if (typeof operator == 'function') {
+        return operator(x,y);
+    }
+
+    return 0;
+}
+
+function add(x,y) {
+    return x + y;
+}
+
+function kurang(x,y) {
+    return x - y;
+}
+
+console.log(hitung(2,3,add))
+console.log(hitung(2,3,kurang))
+console.log(hitung(2,3,8))
+
+// PROMISE
+// const janji = new Promise() // data dari db;
+// janji.then(result => console.log(result))
+//     .catch(result => console.log(result))
+//     .finally(() => console.log('akhir')) // optional
+
+// ASYNC AWAIT
+// async function getDatabase() {
+//     return [1,2,3]
+// }
+
+// const data_database = await getDatabase()
+// console.log(data_database) // pending 000000
+
+
+
+setTimeout(() => {
+    console.log('blabla')
+}, 5000)
+
+// setInterval(() => {
+//     console.log('aw')
+// }, 1000)
+
+</script>
